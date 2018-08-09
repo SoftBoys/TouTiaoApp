@@ -12,9 +12,13 @@
 #import "TTHomeTitlesRequest.h"
 #import "TTHomeTitleModel.h"
 
+#import "TTHomeNavSearchView.h"
+
 #import "TTHomeDetailViewController.h"
+#import "TTXiaoShiPinViewController.h"
 
 @interface TTHomeViewController () <ZJScrollPageViewDelegate>
+@property (nonatomic, strong) TTHomeNavSearchView *searchView;
 @property (nonatomic, strong) NSArray *titleArray;
 @property (nonatomic, strong) TTScrollPageView *pageView;
 @end
@@ -26,7 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationBar.backgroundColor = [UIColor colorWithRed:0.97 green:0.35f blue:0.35f alpha:1.00f];
+    self.navigationBar.backgroundColor = [UIColor tt_navRedColor];
+    
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 
     [self loadData];
@@ -65,10 +70,16 @@
             NSMutableArray *titles = @[].mutableCopy;
 //            NSLog(@"------begin-------");
             for (TTHomeTitleModel *model in self.titleArray) {
-                TTHomeDetailViewController *detailVC = [TTHomeDetailViewController new];
-                [self addChildViewController:detailVC];
-//                NSLog(@"category:%@ name:%@", model.category, model.name);
-                [titles addObject:model.name];
+                if ([model.category isEqualToString:@"hotsoon_video"]) {
+                    TTXiaoShiPinViewController *shipinVC = [TTXiaoShiPinViewController new];
+                    shipinVC.is_subVC = YES;
+                    [self addChildViewController:shipinVC];
+                    [titles addObject:model.name];
+                } else {
+                    TTHomeDetailViewController *detailVC = [TTHomeDetailViewController new];
+                    [self addChildViewController:detailVC];
+                    [titles addObject:model.name];
+                }
             }
 //            NSLog(@"------end-------");
             [self.pageView reloadWithNewTitles:titles];
@@ -83,15 +94,39 @@
 - (BOOL)navigationBarNeedsBottomLine:(TTNavigationBar *)navigationBar {
     return NO;
 }
-- (UIImage *)navigationBarLeftImage:(UIButton *)button navigationBar:(TTNavigationBar *)navigationBar {
-    return nil;
+- (UIView *)navigationBarLeftView:(TTNavigationBar *)navigationBar {
+    
+    UIImage *image = [[UIImage imageNamed:@"user_24x24_"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    TTHomeNavItemButton *button = [TTHomeNavItemButton buttonWithType:UIButtonTypeCustom];
+    button.tintColor = [UIColor whiteColor];
+    [button setImage:image forState:UIControlStateNormal];
+    [button setTitle:@"未登录" forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, 44, 44);
+    return button;
 }
-- (UIImage *)navigationBarRightImage:(UIButton *)button navigationBar:(TTNavigationBar *)navigationBar {
-    return nil;
+- (UIView *)navigationBarRightView:(TTNavigationBar *)navigationBar {
+    UIImage *image = [[UIImage imageNamed:@"short_video_publish_icon_camera_24x24_"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    
+    TTHomeNavItemButton *button = [TTHomeNavItemButton buttonWithType:UIButtonTypeCustom];
+    button.tintColor = [UIColor whiteColor];
+    [button setImage:image forState:UIControlStateNormal];
+    [button setTitle:@"发布" forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, 44, 44);
+    return button;
 }
+//- (UIImage *)navigationBarLeftImage:(UIButton *)button navigationBar:(TTNavigationBar *)navigationBar {
+//    button.tintColor = [UIColor whiteColor];
+//    return [[UIImage imageNamed:@"user_24x24_"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//}
+//- (UIImage *)navigationBarRightImage:(UIButton *)button navigationBar:(TTNavigationBar *)navigationBar {
+//    button.tintColor = [UIColor whiteColor];
+//    return [[UIImage imageNamed:@"short_video_publish_icon_camera_24x24_"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//}
 
 - (UIView *)navigationBarTitleView:(TTNavigationBar *)navigationBar {
-    return nil;
+    self.searchView.keywords = @"温室效应";
+    return self.searchView;
 }
 #pragma mark - ZJScrollPageViewDelegate
 - (NSInteger)numberOfChildViewControllers {
@@ -120,5 +155,12 @@
     }
     return _pageView;
 }
-
+- (TTHomeNavSearchView *)searchView {
+    if (!_searchView) {
+        TTHomeNavSearchView *searchView = [TTHomeNavSearchView new];
+        searchView.frame = CGRectMake(0, 0, kScreenWidth-88, 30);
+        _searchView = searchView;
+    }
+    return _searchView;
+}
 @end

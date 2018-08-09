@@ -84,15 +84,26 @@
             sourceY = CGRectGetMaxY(_titleFrame);
         }
         
-        
-        if (model.stick_label.length) {
+        NSString *stick = nil;
+        if (model.stick_style) {
+            stick = @"置顶";
+        } else if (model.hot) {
+            stick = @"热";
+        }
+        if (stick.length) {
             UIFont *stickFont = [UIFont systemFontOfSize:10];
             //
             CGFloat stickX = titleX;
             CGFloat stickY = sourceY + 5;
-            CGSize stickSize = [model.label tt_sizeWithFont:stickFont width:kScreenWidth lineSpace:4];
-            _stickFrame = CGRectMake(stickX, stickY, stickSize.width + 6, stickSize.height + 4);
-            _stick = [model.label tt_attributeStringWithFont:stickFont lineSpace:4];
+            CGSize stickSize = [stick tt_sizeWithFont:stickFont width:kScreenWidth lineSpace:4];
+            _stickFrame = CGRectMake(stickX, stickY, stickSize.width + 6, stickSize.height + 0);
+            NSMutableAttributedString *attStick = [stick tt_attributeStringWithFont:stickFont lineSpace:0].mutableCopy;
+            NSRange range = NSMakeRange(0, attStick.length);
+            NSDictionary *attribute = [attStick attributesAtIndex:0 effectiveRange:&range];
+            NSMutableParagraphStyle *style = attribute[NSParagraphStyleAttributeName];
+            style.alignment = NSTextAlignmentCenter;
+            
+            _stick = attStick;
             
         }
         

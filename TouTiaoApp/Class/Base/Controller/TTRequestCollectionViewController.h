@@ -10,4 +10,6 @@
 
 @interface TTRequestCollectionViewController : TTBaseColllectionViewController
 
+- (void)loadIsMore:(BOOL)isMore;
+- (void)endHeaderFooterRefresh;
 @end

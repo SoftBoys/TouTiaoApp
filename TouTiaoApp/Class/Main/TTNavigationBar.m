@@ -41,7 +41,14 @@
     CGFloat marginX = MAX(CGRectGetWidth(self.leftView.frame), CGRectGetWidth(self.rightView.frame));
     CGFloat titleW = MIN(CGRectGetWidth(self.titleView.frame), (kScreenWidth-marginX*2));
     CGFloat titleX = (kScreenWidth-titleW)/2.0;
-    self.titleView.frame = CGRectMake(titleX, kStatusBarHeight, titleW, kNavigationHeight);
+    CGFloat titleH = CGRectGetHeight(self.titleView.frame);
+    CGFloat titleY = kStatusBarHeight + (kNavigationHeight - titleH)*0.5;
+    if (titleH <= 0) {
+        titleH = kNavigationHeight;
+        titleY = kStatusBarHeight;
+    }
+    
+    self.titleView.frame = CGRectMake(titleX, titleY, titleW, titleH);
     
     // bottomLayer
     CGFloat bottomH = 1.0/[UIScreen mainScreen].scale;

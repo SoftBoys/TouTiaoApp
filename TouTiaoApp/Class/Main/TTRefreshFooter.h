@@ -6,8 +6,8 @@
 //  Copyright © 2018年 guojunwei. All rights reserved.
 //
 
-#import "MJRefreshAutoFooter.h"
+#import "MJRefreshAutoNormalFooter.h"
 
-@interface TTRefreshFooter : MJRefreshAutoFooter
+@interface TTRefreshFooter : MJRefreshAutoNormalFooter
 
 @end

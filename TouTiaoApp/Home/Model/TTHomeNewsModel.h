@@ -27,6 +27,10 @@
 @property (nonatomic, copy) NSArray <TTWebImage*> *image_list;
 
 @property (nonatomic, copy) NSString *url; // 链接
+/** 标签【置顶】 */
+@property (nonatomic, assign) BOOL stick_style;
+/** 标签 【火】 */
+@property (nonatomic, assign) BOOL hot;
 @end
 
 @interface TTWebImage : NSObject

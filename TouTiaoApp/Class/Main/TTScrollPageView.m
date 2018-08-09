@@ -17,16 +17,17 @@
     style.showLine = NO;
     
     style.gradualChangeTitleColor = YES;
-    style.titleFont = [UIFont systemFontOfSize:16];
+    style.titleFont = [UIFont tt_homePageTitleFont];
     style.scaleTitle = YES;
     style.titleBigScale = 1.05;
     style.animatedContentViewWhenTitleClicked = NO;
 //    style.scrollLineColor = kColorWithHexString(@"#f29800");
 //    style.scrollLineHeight = 0;
     //        style.normalTitleColor = [UIColor jl_red:0 green:0 blue:0];
-    style.normalTitleColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    style.normalTitleColor = [UIColor tt_homePageTitleColor];
     
-    style.selectedTitleColor = kCOLOR_NAV_RED;
+    style.selectedTitleColor = [UIColor tt_navRedColor];
+    
 //    style.selectedTitleColor = style.scrollLineColor;
     
     style.autoAdjustTitlesWidth = YES;
@@ -52,7 +53,7 @@
         UIView *segmentView = self.segmentView;
         
         CALayer *layer = [CALayer layer];
-        layer.backgroundColor = [UIColor lightGrayColor].CGColor;
+        layer.backgroundColor = [UIColor tt_navLineColor].CGColor;
         
         CGFloat layerY = CGRectGetHeight(segmentView.bounds);
         CGFloat layerW = CGRectGetWidth(segmentView.bounds);

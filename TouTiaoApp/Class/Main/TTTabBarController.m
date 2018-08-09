@@ -26,6 +26,9 @@
     tabbar.barTintColor = [UIColor colorWithRed:0.95f green:0.95f blue:0.95f alpha:1.00f];
     tabbar.barTintColor = [UIColor whiteColor];
     
+    tabbar.backgroundImage = [[UIImage tt_imageWithColor:[UIColor whiteColor] size:CGSizeMake(10, 10)] imageWithAlignmentRectInsets:UIEdgeInsetsMake(5, 5, 5, 5)];
+    tabbar.shadowImage = [UIImage tt_imageWithColor:[UIColor tt_navLineColor] size:CGSizeMake(kScreenWidth, kLINE_HEIGHT)];
+    
     UITabBarItem * item = [UITabBarItem appearance];
     
     item.titlePositionAdjustment = UIOffsetMake(0, -5);

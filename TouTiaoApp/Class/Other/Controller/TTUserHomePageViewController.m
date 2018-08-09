@@ -70,20 +70,20 @@
     if (offsetY < 0) {
         _leftImage = [UIImage imageNamed:@"personal_home_back_white_24x24_"];
         _navBackColor = [[UIColor whiteColor] colorWithAlphaComponent:0];
-        _navBottomColor = [kCOLOR_NAV_LINE colorWithAlphaComponent:0];
+        _navBottomColor = [[UIColor tt_navLineColor] colorWithAlphaComponent:0];
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
         
     } else if (offsetY < maxHeight) {
         _leftImage = [UIImage imageNamed:@"personal_home_back_white_24x24_"];
         CGFloat alpha = offsetY/maxHeight;
         _navBackColor = [[UIColor whiteColor] colorWithAlphaComponent:alpha];
-        _navBottomColor = [kCOLOR_NAV_LINE colorWithAlphaComponent:alpha];
+        _navBottomColor = [[UIColor tt_navLineColor] colorWithAlphaComponent:alpha];
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     } else {
         
         _leftImage = [UIImage imageNamed:@"personal_home_back_black_24x24_"];
         _navBackColor = [[UIColor whiteColor] colorWithAlphaComponent:1];
-        _navBottomColor = [kCOLOR_NAV_LINE colorWithAlphaComponent:1];
+        _navBottomColor = [[UIColor tt_navLineColor] colorWithAlphaComponent:1];
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     }
     self.navigationBar.backgroundColor = _navBackColor;

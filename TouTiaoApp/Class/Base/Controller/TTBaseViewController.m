@@ -37,12 +37,14 @@
     return YES;
 }
 - (UIColor *)navigationBarBottomColor:(TTNavigationBar *)navigationBar {
-    return [UIColor lightGrayColor];
+    return [UIColor tt_navLineColor];
 }
 - (BOOL)navigationBarNeedsGradient:(TTNavigationBar *)navigationBar {
     return NO;
 }
 - (NSAttributedString *)navigationBarTitle:(TTNavigationBar *)navigationBar {
+    NSString *title = self.navigationItem.title ?: self.title;
+    return [title tt_attributeStringWithFont:[UIFont tt_boldFontOfSize:17] lineSpace:0];
     return nil;
 }
 - (UIImage *)navigationBarLeftImage:(UIButton *)button navigationBar:(TTNavigationBar *)navigationBar {

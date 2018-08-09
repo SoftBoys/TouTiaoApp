@@ -7,6 +7,8 @@
 //
 
 #import "TTRequestCollectionViewController.h"
+#import "TTRefreshFooter.h"
+#import "TTRefreshGifHeader.h"
 
 @interface TTRequestCollectionViewController ()
 
@@ -16,22 +18,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    __weak typeof(self) weakself = self;
+    self.collectionView.mj_header = [TTRefreshGifHeader headerWithRefreshingBlock:^{
+        __strong typeof(weakself) strongself = weakself;
+        [strongself loadIsMore:NO];
+    }];
+    self.collectionView.mj_footer = [TTRefreshFooter footerWithRefreshingBlock:^{
+        __strong typeof(weakself) strongself = weakself;
+        [strongself loadIsMore:YES];
+    }];
+    
+    [self.collectionView.mj_header beginRefreshing];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)loadIsMore:(BOOL)isMore {
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)endHeaderFooterRefresh {
+    [self.collectionView.mj_header endRefreshing];
+    [self.collectionView.mj_footer endRefreshing];
 }
-*/
 
 @end

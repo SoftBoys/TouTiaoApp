@@ -37,7 +37,7 @@
 }
 #pragma mark - TTBaseWebViewControllerDataSource
 - (UIColor *)webViewControllerProgressColor:(TTBaseViewController *)viewController {
-    return kCOLOR_NAV_RED;
+    return [UIColor tt_navRedColor];
 }
 - (BOOL)webViewControllerIsNeedProgerss:(TTBaseViewController *)viewController {
     return YES;

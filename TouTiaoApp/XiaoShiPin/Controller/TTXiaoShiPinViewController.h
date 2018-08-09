@@ -7,7 +7,12 @@
 //
 
 #import "TTRequestCollectionViewController.h"
+#import "TTScrollPageView.h"
 
-@interface TTXiaoShiPinViewController : TTRequestCollectionViewController
+@class TTHomeTitleModel;
+@interface TTXiaoShiPinViewController : TTRequestCollectionViewController <ZJScrollPageViewChildVcDelegate>
+/** 通过首页入口进去的 */
+@property (nonatomic, assign) BOOL is_subVC;
+@property (nonatomic, strong) TTHomeTitleModel *titleModel;
 
 @end

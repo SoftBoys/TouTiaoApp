@@ -10,6 +10,13 @@
 
 @interface UIFont (TTMore)
 
++ (UIFont *)tt_navTitleFont;
++ (UIFont *)tt_homePageTitleFont;
++ (UIFont *)tt_homeTitleFont;
++ (UIFont *)tt_homeTimeFont;
 
 
+//
++ (UIFont *)tt_fontOfSize:(CGFloat)fontSize;
++ (UIFont *)tt_boldFontOfSize:(CGFloat)fontSize;
 @end

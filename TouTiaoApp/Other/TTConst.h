@@ -13,6 +13,9 @@
 #import "NSString+TTAttribute.h"
 #import <Masonry/Masonry.h>
 #import "UIImageView+TTWeb.h"
+#import "UIFont+TTMore.h"
+#import "UIColor+TTMore.h"
+#import "UIImage+TTMore.h"
 
 
 #define kScreenWidth        [UIScreen mainScreen].bounds.size.width
@@ -20,9 +23,6 @@
 #define kStatusBarHeight    [UIApplication sharedApplication].statusBarFrame.size.height
 #define kNavigationHeight   44.0f
 #define kTopBarHeight       kStatusBarHeight + kNavigationHeight
-
-#define kCOLOR_NAV_RED      [UIColor colorWithRed:0.97 green:0.35f blue:0.35f alpha:1.00f]
-#define kCOLOR_NAV_LINE     [UIColor colorWithRed:(241/255.0) green:(241/255.0) blue:(241/255.0) alpha:1.00f]
 
 
 

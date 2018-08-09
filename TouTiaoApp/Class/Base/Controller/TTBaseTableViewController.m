@@ -32,6 +32,8 @@
         
         _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
+        _tableView.separatorColor = [UIColor tt_homeCellSepLineColor];
+        
         // ios 11
         if ([_tableView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
             _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;

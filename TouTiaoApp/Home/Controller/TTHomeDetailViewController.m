@@ -90,6 +90,9 @@ static NSInteger containerViewTag = 1000;
                     for (NSDictionary *dict in data) {
                         TTVideoListModel *model = [TTVideoListModel mj_objectWithKeyValues:dict];
                         [model videoModel];
+                        if (model.videoModel.playInfo.video_list == nil) {
+                            continue;
+                        }
                         
                         TTXiGuaVideoViewModel *viewModel = [TTXiGuaVideoViewModel new];
                         viewModel.model = model.videoModel;
@@ -102,7 +105,10 @@ static NSInteger containerViewTag = 1000;
                     for (NSDictionary *dict in data) {
                         
                         TTHomeNewsListModel *model = [TTHomeNewsListModel mj_objectWithKeyValues:dict];
-                        [model newsModel];
+//                        [model newsModel];
+                        if (model.newsModel.title.length == 0) {
+                            continue;
+                        }
                         
                         TTHomeNewsViewModel *viewModel = [TTHomeNewsViewModel viewModelWithModel:[model newsModel]];
                         [self.dataArray addObject:viewModel];

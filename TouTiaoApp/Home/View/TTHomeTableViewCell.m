@@ -33,6 +33,7 @@
         
         self.labstick.frame = viewModel.stickFrame;
         self.labstick.attributedText = viewModel.stick;
+    
         
         self.labsource.frame = viewModel.sourceFrame;
         self.labsource.attributedText = viewModel.source;
@@ -46,7 +47,7 @@
         if (self.iconViews.count < imageFrames.count) {
             for (NSInteger i = self.iconViews.count; i < imageFrames.count; i++) {
                 UIImageView *imageView = [UIImageView new];
-                imageView.backgroundColor = kCOLOR_NAV_RED;
+                imageView.backgroundColor = [UIColor tt_placeholderImageColor];
 //                imageView.contentMode = UIViewContentModeScaleAspectFit;
                 [self.contentView addSubview:imageView];
                 [self.iconViews addObject:imageView];
@@ -79,8 +80,13 @@
 - (UILabel *)labstick {
     if (!_labstick) {
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-        label.textColor = kCOLOR_NAV_RED;
+        label.textColor = [UIColor tt_navRedColor];
+        label.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:label];
+        label.layer.masksToBounds = YES;
+        label.layer.cornerRadius = 3;
+        label.layer.borderColor = [label.textColor CGColor];
+        label.layer.borderWidth = kLINE_HEIGHT;
         _labstick = label;
     }
     return _labstick;
@@ -88,7 +94,7 @@
 - (UILabel *)labsource {
     if (!_labsource) {
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectZero];
-        label.textColor = [UIColor lightGrayColor];
+        label.textColor = [UIColor tt_homeTimeColor];
         [self.contentView addSubview:label];
         _labsource = label;
     }
@@ -97,7 +103,7 @@
 - (UIImageView *)rightIconView {
     if (!_rightIconView) {
         UIImageView *imageView = [UIImageView new];
-        imageView.backgroundColor = kCOLOR_NAV_RED;
+        imageView.backgroundColor = [UIColor tt_placeholderImageColor];
 //        imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.contentView addSubview:imageView];
         _rightIconView = imageView;

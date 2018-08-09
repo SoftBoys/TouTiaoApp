@@ -30,6 +30,7 @@
     if (lineSpace > 0) {
         NSMutableParagraphStyle *style = [NSMutableParagraphStyle new];
         style.lineSpacing = lineSpace;
+        style.alignment = NSTextAlignmentLeft;
         attributes[NSParagraphStyleAttributeName] = style;
     }
     

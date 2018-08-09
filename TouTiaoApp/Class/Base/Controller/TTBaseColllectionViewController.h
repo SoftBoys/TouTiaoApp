@@ -11,4 +11,6 @@
 @interface TTBaseColllectionViewController : TTBaseViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView *collectionView;
 - (instancetype)initWithLayout:(UICollectionViewLayout *)layout;
+
++ (UICollectionViewFlowLayout *)defaultLayout;
 @end

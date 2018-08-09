@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE4A8FC4211BEAEF00F43831 /* UIColor+TTMore.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A8FC3211BEAEF00F43831 /* UIColor+TTMore.m */; };
+		CE4A8FC7211BF1C700F43831 /* UIImage+TTMore.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A8FC6211BF1C700F43831 /* UIImage+TTMore.m */; };
+		CE4A8FCA211BF5DC00F43831 /* TTHomeNavSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A8FC9211BF5DC00F43831 /* TTHomeNavSearchView.m */; };
+		CE4A8FCD211C31C700F43831 /* TTXiaoShiPinListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A8FCC211C31C700F43831 /* TTXiaoShiPinListModel.m */; };
+		CE4A8FD0211C460500F43831 /* TTNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A8FCF211C460500F43831 /* TTNumberFormatter.m */; };
+		CE4A8FD3211C609800F43831 /* TTXiaoShiPinDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A8FD2211C609800F43831 /* TTXiaoShiPinDetailViewController.m */; };
 		CEF1FF1E2109748A00A1817B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FF1D2109748A00A1817B /* AppDelegate.m */; };
 		CEF1FF242109748A00A1817B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF1FF222109748A00A1817B /* Main.storyboard */; };
 		CEF1FF262109748B00A1817B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF1FF252109748B00A1817B /* Assets.xcassets */; };
@@ -40,7 +46,7 @@
 		CEF1FF9B210ABBBF00A1817B /* UITableViewCell+TTCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FF9A210ABBBF00A1817B /* UITableViewCell+TTCategory.m */; };
 		CEF1FF9E210ABD1000A1817B /* TTHomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FF9D210ABD1000A1817B /* TTHomeTableViewCell.m */; };
 		CEF1FFA1210ABD2F00A1817B /* TTXiGuaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FFA0210ABD2F00A1817B /* TTXiGuaTableViewCell.m */; };
-		CEF1FFA4210ABD4900A1817B /* TTXiaoShiPinTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FFA3210ABD4900A1817B /* TTXiaoShiPinTableViewCell.m */; };
+		CEF1FFA4210ABD4900A1817B /* TTXiaoShiPinCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FFA3210ABD4900A1817B /* TTXiaoShiPinCell.m */; };
 		CEF1FFA7210AC22B00A1817B /* TTURLHandleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FFA6210AC22B00A1817B /* TTURLHandleManager.m */; };
 		CEF1FFAA210ACE8900A1817B /* TTHomeTitlesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FFA9210ACE8900A1817B /* TTHomeTitlesRequest.m */; };
 		CEF1FFAD210AD06200A1817B /* TTHomeTitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FFAC210AD06200A1817B /* TTHomeTitleModel.m */; };
@@ -70,6 +76,18 @@
 
 /* Begin PBXFileReference section */
 		871BA9C4C1D9EF5996E8FE0C /* Pods-TouTiaoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TouTiaoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TouTiaoApp/Pods-TouTiaoApp.release.xcconfig"; sourceTree = "<group>"; };
+		CE4A8FC2211BEAEF00F43831 /* UIColor+TTMore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+TTMore.h"; sourceTree = "<group>"; };
+		CE4A8FC3211BEAEF00F43831 /* UIColor+TTMore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TTMore.m"; sourceTree = "<group>"; };
+		CE4A8FC5211BF1C700F43831 /* UIImage+TTMore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+TTMore.h"; sourceTree = "<group>"; };
+		CE4A8FC6211BF1C700F43831 /* UIImage+TTMore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TTMore.m"; sourceTree = "<group>"; };
+		CE4A8FC8211BF5DC00F43831 /* TTHomeNavSearchView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTHomeNavSearchView.h; sourceTree = "<group>"; };
+		CE4A8FC9211BF5DC00F43831 /* TTHomeNavSearchView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTHomeNavSearchView.m; sourceTree = "<group>"; };
+		CE4A8FCB211C31C700F43831 /* TTXiaoShiPinListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTXiaoShiPinListModel.h; sourceTree = "<group>"; };
+		CE4A8FCC211C31C700F43831 /* TTXiaoShiPinListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTXiaoShiPinListModel.m; sourceTree = "<group>"; };
+		CE4A8FCE211C460500F43831 /* TTNumberFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTNumberFormatter.h; sourceTree = "<group>"; };
+		CE4A8FCF211C460500F43831 /* TTNumberFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTNumberFormatter.m; sourceTree = "<group>"; };
+		CE4A8FD1211C609800F43831 /* TTXiaoShiPinDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTXiaoShiPinDetailViewController.h; sourceTree = "<group>"; };
+		CE4A8FD2211C609800F43831 /* TTXiaoShiPinDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTXiaoShiPinDetailViewController.m; sourceTree = "<group>"; };
 		CEF1FF192109748A00A1817B /* TouTiaoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouTiaoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF1FF1C2109748A00A1817B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEF1FF1D2109748A00A1817B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -136,8 +154,8 @@
 		CEF1FF9D210ABD1000A1817B /* TTHomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTHomeTableViewCell.m; sourceTree = "<group>"; };
 		CEF1FF9F210ABD2F00A1817B /* TTXiGuaTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTXiGuaTableViewCell.h; sourceTree = "<group>"; };
 		CEF1FFA0210ABD2F00A1817B /* TTXiGuaTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTXiGuaTableViewCell.m; sourceTree = "<group>"; };
-		CEF1FFA2210ABD4900A1817B /* TTXiaoShiPinTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTXiaoShiPinTableViewCell.h; sourceTree = "<group>"; };
-		CEF1FFA3210ABD4900A1817B /* TTXiaoShiPinTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTXiaoShiPinTableViewCell.m; sourceTree = "<group>"; };
+		CEF1FFA2210ABD4900A1817B /* TTXiaoShiPinCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTXiaoShiPinCell.h; sourceTree = "<group>"; };
+		CEF1FFA3210ABD4900A1817B /* TTXiaoShiPinCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTXiaoShiPinCell.m; sourceTree = "<group>"; };
 		CEF1FFA5210AC22B00A1817B /* TTURLHandleManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTURLHandleManager.h; sourceTree = "<group>"; };
 		CEF1FFA6210AC22B00A1817B /* TTURLHandleManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTURLHandleManager.m; sourceTree = "<group>"; };
 		CEF1FFA8210ACE8900A1817B /* TTHomeTitlesRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTHomeTitlesRequest.h; sourceTree = "<group>"; };
@@ -319,6 +337,8 @@
 			children = (
 				CEF1FFA5210AC22B00A1817B /* TTURLHandleManager.h */,
 				CEF1FFA6210AC22B00A1817B /* TTURLHandleManager.m */,
+				CE4A8FCE211C460500F43831 /* TTNumberFormatter.h */,
+				CE4A8FCF211C460500F43831 /* TTNumberFormatter.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -428,6 +448,8 @@
 			children = (
 				CEF1FF9C210ABD1000A1817B /* TTHomeTableViewCell.h */,
 				CEF1FF9D210ABD1000A1817B /* TTHomeTableViewCell.m */,
+				CE4A8FC8211BF5DC00F43831 /* TTHomeNavSearchView.h */,
+				CE4A8FC9211BF5DC00F43831 /* TTHomeNavSearchView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -491,6 +513,8 @@
 		CEF1FF5A2109C33900A1817B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE4A8FCB211C31C700F43831 /* TTXiaoShiPinListModel.h */,
+				CE4A8FCC211C31C700F43831 /* TTXiaoShiPinListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -498,8 +522,8 @@
 		CEF1FF5B2109C33A00A1817B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CEF1FFA2210ABD4900A1817B /* TTXiaoShiPinTableViewCell.h */,
-				CEF1FFA3210ABD4900A1817B /* TTXiaoShiPinTableViewCell.m */,
+				CEF1FFA2210ABD4900A1817B /* TTXiaoShiPinCell.h */,
+				CEF1FFA3210ABD4900A1817B /* TTXiaoShiPinCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -509,6 +533,8 @@
 			children = (
 				CEF1FF662109C3D900A1817B /* TTXiaoShiPinViewController.h */,
 				CEF1FF672109C3D900A1817B /* TTXiaoShiPinViewController.m */,
+				CE4A8FD1211C609800F43831 /* TTXiaoShiPinDetailViewController.h */,
+				CE4A8FD2211C609800F43831 /* TTXiaoShiPinDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -561,6 +587,10 @@
 				CEF1FFC3210AF13B00A1817B /* NSString+TTAttribute.m */,
 				CEF1FFC5210AF5D600A1817B /* UIFont+TTMore.h */,
 				CEF1FFC6210AF5D600A1817B /* UIFont+TTMore.m */,
+				CE4A8FC2211BEAEF00F43831 /* UIColor+TTMore.h */,
+				CE4A8FC3211BEAEF00F43831 /* UIColor+TTMore.m */,
+				CE4A8FC5211BF1C700F43831 /* UIImage+TTMore.h */,
+				CE4A8FC6211BF1C700F43831 /* UIImage+TTMore.m */,
 				CEF1FFE3210F384000A1817B /* UIImageView+TTWeb.h */,
 				CEF1FFE4210F384000A1817B /* UIImageView+TTWeb.m */,
 			);
@@ -757,8 +787,10 @@
 				CEF1FF2C2109748B00A1817B /* main.m in Sources */,
 				CEF1FFCD210B0A6100A1817B /* TTWebViewController.m in Sources */,
 				CEF1FFEF21105D5100A1817B /* TTUserHomePageRequest.m in Sources */,
+				CE4A8FD3211C609800F43831 /* TTXiaoShiPinDetailViewController.m in Sources */,
 				CEF1FFAD210AD06200A1817B /* TTHomeTitleModel.m in Sources */,
 				CEF1FF1E2109748A00A1817B /* AppDelegate.m in Sources */,
+				CE4A8FC4211BEAEF00F43831 /* UIColor+TTMore.m in Sources */,
 				CEF1FFB3210AD7F300A1817B /* TTRefreshGifHeader.m in Sources */,
 				CEF1FFB9210ADE4600A1817B /* TTHomeNewsModel.m in Sources */,
 				CEF1FF7F2109D7D100A1817B /* ZJContentView.m in Sources */,
@@ -775,11 +807,13 @@
 				CEF1FFD6210EBF1000A1817B /* TTBaseColllectionViewController.m in Sources */,
 				CEF1FFB0210AD7D400A1817B /* TTRefreshFooter.m in Sources */,
 				CEF1FF9E210ABD1000A1817B /* TTHomeTableViewCell.m in Sources */,
+				CE4A8FCD211C31C700F43831 /* TTXiaoShiPinListModel.m in Sources */,
 				CEF1FFD0210B2EDE00A1817B /* TTVideoListModel.m in Sources */,
 				CEF1FFA1210ABD2F00A1817B /* TTXiGuaTableViewCell.m in Sources */,
 				CEF1FFE5210F384000A1817B /* UIImageView+TTWeb.m in Sources */,
+				CE4A8FC7211BF1C700F43831 /* UIImage+TTMore.m in Sources */,
 				CEF1FFA7210AC22B00A1817B /* TTURLHandleManager.m in Sources */,
-				CEF1FFA4210ABD4900A1817B /* TTXiaoShiPinTableViewCell.m in Sources */,
+				CEF1FFA4210ABD4900A1817B /* TTXiaoShiPinCell.m in Sources */,
 				CEF1FF832109D7D100A1817B /* ZJScrollPageView.m in Sources */,
 				CEF1FF5F2109C35700A1817B /* TTHomeViewController.m in Sources */,
 				CEF1FFC0210AEBAE00A1817B /* TTBaseViewModel.m in Sources */,
@@ -790,6 +824,7 @@
 				CEF1FF812109D7D100A1817B /* ZJSegmentStyle.m in Sources */,
 				CEF1FFEC2110529F00A1817B /* TTUserHomePageViewController.m in Sources */,
 				CEF1FFF521114F9900A1817B /* TTUserHomePageHeadView.m in Sources */,
+				CE4A8FCA211BF5DC00F43831 /* TTHomeNavSearchView.m in Sources */,
 				CEF1FFBC210AE5CF00A1817B /* TTHomeNewsViewModel.m in Sources */,
 				CEF1FF422109A68B00A1817B /* TTBaseViewController.m in Sources */,
 				CEF1FF652109C3CD00A1817B /* TTZhaoRenViewController.m in Sources */,
@@ -800,6 +835,7 @@
 				CEF1FF822109D7D100A1817B /* ZJScrollSegmentView.m in Sources */,
 				CEF1FF3A2109A59000A1817B /* TTTabBarController.m in Sources */,
 				CEF1FF622109C3BF00A1817B /* TTXiGuaViewController.m in Sources */,
+				CE4A8FD0211C460500F43831 /* TTNumberFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -940,7 +976,9 @@
 			baseConfigurationReference = EE817453950AA9D8C52A42DE /* Pods-TouTiaoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J984W9Y6U6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TouTiaoApp/Lib",
@@ -958,7 +996,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinlian.TouTiaoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -967,7 +1005,9 @@
 			baseConfigurationReference = 871BA9C4C1D9EF5996E8FE0C /* Pods-TouTiaoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J984W9Y6U6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TouTiaoApp/Lib",
@@ -985,7 +1025,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jinlian.TouTiaoApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
