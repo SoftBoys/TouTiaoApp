@@ -29,7 +29,9 @@
 @implementation TTUserHomePageViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     self.navigationBar.backgroundColor = [UIColor clearColor];
     self.swipeTableView.backgroundColor = [UIColor whiteColor];
     
@@ -38,6 +40,7 @@
     [self.swipeTableView reloadData];
     
 }
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self scrollViewDidScroll:self.swipeTableView.currentScrollView];
@@ -56,6 +59,8 @@
             TTUserHomePageModel *model = [TTUserHomePageModel mj_objectWithKeyValues:data];
             
             self.headerView.model = model;
+            
+            [self.swipeTableView reloadData];
             
         }
     }];

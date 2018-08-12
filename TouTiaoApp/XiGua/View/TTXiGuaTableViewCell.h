@@ -9,6 +9,7 @@
 #import "TTBaseTableViewCell.h"
 #import <ZFPlayer/ZFAVPlayerManager.h>
 
+static NSInteger kXiGuaContainerViewTag = 1000;
 @class TTXiGuaVideoViewModel;
 @interface TTXiGuaTableViewCell : TTBaseTableViewCell
 @property (nonatomic, strong) TTXiGuaVideoViewModel *viewModel;

@@ -18,4 +18,6 @@
 + (void)parseAppURL:(NSURL *)url;
 
 + (UIViewController *)topViewController;
+
++ (NSDictionary *)queryWithQueryString:(NSString *)queryString;
 @end

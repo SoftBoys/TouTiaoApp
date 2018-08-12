@@ -23,6 +23,9 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    [UIApplication sharedApplication].statusBarHidden = NO;
+    
+    
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -31,6 +34,10 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     [self.view bringSubviewToFront:self.navigationBar];
+//    CGRect navFrame = self.navigationBar.frame;
+//    navFrame.size.height = kTopBarHeight;
+////    CGRectMake(0, 0, kScreenWidth, kTopBarHeight);
+//    self.navigationBar.frame = navFrame;
 }
 #pragma mark - TTNavigationBarDataSource
 - (BOOL)navigationBarNeedsBottomLine:(TTNavigationBar *)navigationBar; {

@@ -30,7 +30,7 @@
     [self.contentView addSubview:self.backView];
     [self.backView addSubview:self.maskTitleView];
     
-    self.backView.tag = 1000;
+    self.backView.tag = kXiGuaContainerViewTag;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapClick)];
     [self.backView addGestureRecognizer:tap];

@@ -13,6 +13,9 @@
 		CE4A8FCD211C31C700F43831 /* TTXiaoShiPinListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A8FCC211C31C700F43831 /* TTXiaoShiPinListModel.m */; };
 		CE4A8FD0211C460500F43831 /* TTNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A8FCF211C460500F43831 /* TTNumberFormatter.m */; };
 		CE4A8FD3211C609800F43831 /* TTXiaoShiPinDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A8FD2211C609800F43831 /* TTXiaoShiPinDetailViewController.m */; };
+		CE4A8FEB211D861700F43831 /* TTXiaoShiPinDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A8FEA211D861700F43831 /* TTXiaoShiPinDetailCell.m */; };
+		CE4A8FEE211E7F5F00F43831 /* TTXiaoShiPinDetailCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A8FED211E7F5F00F43831 /* TTXiaoShiPinDetailCollectionView.m */; };
+		CE4A8FF1211E8F2600F43831 /* TTXiaoShiPinControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4A8FF0211E8F2600F43831 /* TTXiaoShiPinControlView.m */; };
 		CEF1FF1E2109748A00A1817B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF1FF1D2109748A00A1817B /* AppDelegate.m */; };
 		CEF1FF242109748A00A1817B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEF1FF222109748A00A1817B /* Main.storyboard */; };
 		CEF1FF262109748B00A1817B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEF1FF252109748B00A1817B /* Assets.xcassets */; };
@@ -88,6 +91,12 @@
 		CE4A8FCF211C460500F43831 /* TTNumberFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTNumberFormatter.m; sourceTree = "<group>"; };
 		CE4A8FD1211C609800F43831 /* TTXiaoShiPinDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTXiaoShiPinDetailViewController.h; sourceTree = "<group>"; };
 		CE4A8FD2211C609800F43831 /* TTXiaoShiPinDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTXiaoShiPinDetailViewController.m; sourceTree = "<group>"; };
+		CE4A8FE9211D861700F43831 /* TTXiaoShiPinDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTXiaoShiPinDetailCell.h; sourceTree = "<group>"; };
+		CE4A8FEA211D861700F43831 /* TTXiaoShiPinDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTXiaoShiPinDetailCell.m; sourceTree = "<group>"; };
+		CE4A8FEC211E7F5F00F43831 /* TTXiaoShiPinDetailCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTXiaoShiPinDetailCollectionView.h; sourceTree = "<group>"; };
+		CE4A8FED211E7F5F00F43831 /* TTXiaoShiPinDetailCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTXiaoShiPinDetailCollectionView.m; sourceTree = "<group>"; };
+		CE4A8FEF211E8F2600F43831 /* TTXiaoShiPinControlView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTXiaoShiPinControlView.h; sourceTree = "<group>"; };
+		CE4A8FF0211E8F2600F43831 /* TTXiaoShiPinControlView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTXiaoShiPinControlView.m; sourceTree = "<group>"; };
 		CEF1FF192109748A00A1817B /* TouTiaoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouTiaoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF1FF1C2109748A00A1817B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEF1FF1D2109748A00A1817B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -524,6 +533,12 @@
 			children = (
 				CEF1FFA2210ABD4900A1817B /* TTXiaoShiPinCell.h */,
 				CEF1FFA3210ABD4900A1817B /* TTXiaoShiPinCell.m */,
+				CE4A8FE9211D861700F43831 /* TTXiaoShiPinDetailCell.h */,
+				CE4A8FEA211D861700F43831 /* TTXiaoShiPinDetailCell.m */,
+				CE4A8FEF211E8F2600F43831 /* TTXiaoShiPinControlView.h */,
+				CE4A8FF0211E8F2600F43831 /* TTXiaoShiPinControlView.m */,
+				CE4A8FEC211E7F5F00F43831 /* TTXiaoShiPinDetailCollectionView.h */,
+				CE4A8FED211E7F5F00F43831 /* TTXiaoShiPinDetailCollectionView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -775,6 +790,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4A8FEB211D861700F43831 /* TTXiaoShiPinDetailCell.m in Sources */,
 				CEF1FFCA210B070400A1817B /* TTBaseWebViewController.m in Sources */,
 				CEF1FFAA210ACE8900A1817B /* TTHomeTitlesRequest.m in Sources */,
 				CEF1FF92210AB87200A1817B /* TTHomeDetailViewController.m in Sources */,
@@ -799,6 +815,7 @@
 				CEF1FF452109A6AA00A1817B /* TTBaseTableViewController.m in Sources */,
 				CEF1FF4B2109B00500A1817B /* TTConst.m in Sources */,
 				CEF1FF862109D83F00A1817B /* TTRequestManager.m in Sources */,
+				CE4A8FEE211E7F5F00F43831 /* TTXiaoShiPinDetailCollectionView.m in Sources */,
 				CEF1FFD3210EAED500A1817B /* TTXiGuaRequest.m in Sources */,
 				CEF1FFDF210EFA5F00A1817B /* TTXiGuaMaskView.m in Sources */,
 				CEF1FFC4210AF13B00A1817B /* NSString+TTAttribute.m in Sources */,
@@ -825,6 +842,7 @@
 				CEF1FFEC2110529F00A1817B /* TTUserHomePageViewController.m in Sources */,
 				CEF1FFF521114F9900A1817B /* TTUserHomePageHeadView.m in Sources */,
 				CE4A8FCA211BF5DC00F43831 /* TTHomeNavSearchView.m in Sources */,
+				CE4A8FF1211E8F2600F43831 /* TTXiaoShiPinControlView.m in Sources */,
 				CEF1FFBC210AE5CF00A1817B /* TTHomeNewsViewModel.m in Sources */,
 				CEF1FF422109A68B00A1817B /* TTBaseViewController.m in Sources */,
 				CEF1FF652109C3CD00A1817B /* TTZhaoRenViewController.m in Sources */,

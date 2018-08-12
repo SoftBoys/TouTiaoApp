@@ -25,8 +25,6 @@
 #import <ZFPlayer/ZFPlayerControlView.h>
 #import <ZFPlayer/ZFAVPlayerManager.h>
 
-static NSInteger containerViewTag = 1000;
-
 @interface TTHomeDetailViewController ()
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) ZFPlayerController *player;
@@ -128,9 +126,8 @@ static NSInteger containerViewTag = 1000;
         
     }];
 }
-- (void)playAtCell:(TTXiGuaTableViewCell *)cell indexPath:(NSIndexPath *)indexPath fatherView:(UIView *)fatherView {
+- (void)playAtCell:(TTXiGuaTableViewCell *)cell indexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop {
     
-    fatherView.tag = containerViewTag;
     
     TTVideoPlayInfoModel *playModel = cell.viewModel.model.playInfo;
     
@@ -139,7 +136,7 @@ static NSInteger containerViewTag = 1000;
     NSString *title = cell.viewModel.model.title;
     [self.controlView showTitle:title coverURLString:playModel.poster_url fullScreenMode:ZFFullScreenModeLandscape];
     
-    [self.player playTheIndexPath:indexPath assetURL:[NSURL URLWithString:videoURL] scrollToTop:NO];
+    [self.player playTheIndexPath:indexPath assetURL:[NSURL URLWithString:videoURL] scrollToTop:scrollToTop];
     
     self.player.playerPlayStatChanged = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, ZFPlayerPlaybackState playState) {
         NSLog(@"changed:");
@@ -172,7 +169,8 @@ static NSInteger containerViewTag = 1000;
         TTXiGuaTableViewCell *cell = [TTXiGuaTableViewCell cellForTableView:tableView];
         cell.viewModel = (TTXiGuaVideoViewModel*)viewModel;
         cell.playBlock = ^(TTXiGuaTableViewCell *cell, UIView *fatherView) {
-            [weakself playAtCell:cell indexPath:indexPath fatherView:fatherView];
+            __strong typeof(weakself) strongself = weakself;
+            [strongself playAtCell:cell indexPath:indexPath scrollToTop:NO];
         };
         return cell;
     }
@@ -216,11 +214,24 @@ static NSInteger containerViewTag = 1000;
 - (ZFPlayerController *)player {
     if (!_player) {
         ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
-        _player = [ZFPlayerController playerWithScrollView:self.tableView playerManager:playerManager containerViewTag:containerViewTag];
+        _player = [ZFPlayerController playerWithScrollView:self.tableView playerManager:playerManager containerViewTag:kXiGuaContainerViewTag];
         _player.controlView = self.controlView;
         _player.shouldAutoPlay = NO;
         
-//        [_playerView autoPlayTheVideo];
+        __weak typeof(self) weakself = self;
+        _player.playerDidToEnd = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset) {
+            __strong typeof(weakself) strongself = weakself;
+            // 全屏时 关闭自动播放下
+            if (strongself.player.isFullScreen) {
+                [strongself.player stopCurrentPlayingCell];
+            } else if (strongself.player.playingIndexPath.row < self.dataArray.count-1) {
+                // 自动播放
+                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:strongself.player.playingIndexPath.row+1 inSection:0];
+                TTXiGuaTableViewCell *cell = [strongself.tableView cellForRowAtIndexPath:indexPath];
+                [strongself playAtCell:cell indexPath:indexPath scrollToTop:YES];
+            }
+        };
+        
     }
     return _player;
 }
