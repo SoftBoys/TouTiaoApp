@@ -104,12 +104,16 @@ typedef NS_ENUM(NSInteger, TTXiaoShiPinMaskType) {
 - (void)setModel:(TTXiaoShiPinListModel *)model {
     _model = model;
     if (_model) {
+//        return;
         NSString *url = [_model.model.first_frame_image_list firstObject].url;
         [self.imageView tt_setImageWithURLString:url];
         
         [self.userView tt_setImageWithURLString:model.model.info.avatar_url];
         self.labuser.text = model.model.info.name;
         self.labdesc.text = model.model.title;
+        
+        
+        
     }
 }
 
@@ -118,18 +122,19 @@ typedef NS_ENUM(NSInteger, TTXiaoShiPinMaskType) {
     if (!_imageView) {
         _imageView = [UIImageView new];
         _imageView.backgroundColor = [UIColor tt_placeholderImageColor];
-        [self.playFatherView addSubview:_imageView];
+        _imageView.tag = kXiaoShiPinContainerViewTag;
+        [self.contentView addSubview:_imageView];
     }
     return _imageView;
 }
-- (UIView *)playFatherView {
-    if (!_playFatherView) {
-        _playFatherView = [UIView new];
-        _playFatherView.tag = kXiaoShiPinContainerViewTag;
-        [self.contentView addSubview:_playFatherView];
-    }
-    return _playFatherView;
-}
+//- (UIView *)playFatherView {
+//    if (!_playFatherView) {
+//        _playFatherView = [UIView new];
+//        _playFatherView.tag = kXiaoShiPinContainerViewTag;
+//        [self.contentView addSubview:_playFatherView];
+//    }
+//    return _playFatherView;
+//}
 
 - (TTXiaoShiPinMaskView *)topMaskView {
     if (!_topMaskView) {

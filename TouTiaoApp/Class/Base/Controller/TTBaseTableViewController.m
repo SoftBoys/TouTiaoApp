@@ -23,7 +23,9 @@
         
         _tableView.separatorColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1];
         
-        _tableView.estimatedRowHeight = 0;
+        _tableView.estimatedRowHeight = 44;
+        _tableView.rowHeight = UITableViewAutomaticDimension;
+        
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;
         

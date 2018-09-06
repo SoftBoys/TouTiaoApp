@@ -47,6 +47,9 @@
     if (self.player.currentPlayerManager.playState == ZFPlayerPlayStatePaused) {
         [self.player.currentPlayerManager  play];
     }
+    
+    
+    
 }
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
@@ -69,7 +72,7 @@
     
     [self.collectionView registerClass:[TTXiaoShiPinDetailCell class] forCellWithReuseIdentifier:@"detailID"];
     
-    self.player;
+//    self.player;
     
     [self loadMore:NO];
     
@@ -90,7 +93,7 @@
     request.category = @"hotsoon_video_detail_draw";
     request.urlString = urlString;
     request.tt_from = @"pre_load_more_draw";
-    
+    request.count = 20;
 //    if (more) {
 //        request.max_behot_time = [NSString stringWithFormat:@"%.ld", (long)[[NSDate date] timeIntervalSince1970]];
 //    } else {
@@ -110,20 +113,30 @@
                     NSString *url = model.model.play_addr.url_list.firstObject;
                     [self.urls addObject:[NSURL URLWithString:url]];
                 }
-                
+            }
+            if (self.detail) {
+                [self.dataArray insertObject:self.detail atIndex:0];
             }
             dispatch_main_async_safe(^{
+                
                 [self.collectionView reloadData];
+                
+                NSIndexPath *indexPath = self.collectionView.zf_playingIndexPath;
+                
                 self.player.assetURLs = self.urls;
                 
-                
                 if (!more) {
+                    [self.collectionView layoutIfNeeded];
                     [self.collectionView setContentOffset:CGPointMake(0, 0)];
                     __weak typeof(self) weakself = self;
                     [self.collectionView zf_filterShouldPlayCellWhileScrolled:^(NSIndexPath * _Nonnull indexPath) {
                         __strong typeof(weakself) strongself = weakself;
                         [strongself playVideoAtIndexPath:indexPath];
                     }];
+                }
+                
+                if (indexPath) {
+                    [self playVideoAtIndexPath:indexPath];
                 }
                 
             });
@@ -197,7 +210,7 @@
         _collectionView.zf_scrollViewDidStopScrollCallback = ^(NSIndexPath * _Nonnull indexPath) {
             __strong typeof(weakself) strongself = weakself;
             if (indexPath.item == strongself.dataArray.count - 1) {
-                [strongself loadMore:YES];
+//                [strongself loadMore:YES];
             }
             [strongself playVideoAtIndexPath:indexPath];
         };

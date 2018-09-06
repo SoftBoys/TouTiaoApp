@@ -82,7 +82,7 @@
         _leftImage = [UIImage imageNamed:@"personal_home_back_white_24x24_"];
         CGFloat alpha = offsetY/maxHeight;
         _navBackColor = [[UIColor whiteColor] colorWithAlphaComponent:alpha];
-        _navBottomColor = [[UIColor tt_navLineColor] colorWithAlphaComponent:alpha];
+        _navBottomColor = [[UIColor tt_navLineColor] colorWithAlphaComponent:0];
         [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     } else {
         
@@ -136,7 +136,6 @@
         _swipeTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
         _swipeTableView.shouldAdjustContentSize = YES;
         
-//        _swipeTableView.swipeHeaderTopInset = kTopBarHeight;
         _swipeTableView.stickyHeaderTopInset = kTopBarHeight;
         
         _swipeTableView.swipeHeaderView = self.headerView;

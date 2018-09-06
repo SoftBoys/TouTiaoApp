@@ -13,6 +13,7 @@
 
 @property (nonatomic , copy)NSString *tt_from;
 @property (nonatomic, assign) NSUInteger ts;
+@property (nonatomic, assign) NSInteger count;
 @property (nonatomic, strong) NSNumber *refresh_reason;
 @property (nonatomic, strong) NSNumber *session_refresh_idx;
 

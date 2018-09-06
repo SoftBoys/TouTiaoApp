@@ -13,6 +13,7 @@
     if (self = [super init]) {
         _tt_from = @"pull";
         _ts = [[NSDate date] timeIntervalSince1970];
+        _count = 10;
 //        _refresh_reason = 1;
     }
     return self;
